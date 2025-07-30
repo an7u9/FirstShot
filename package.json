@@ -4,14 +4,26 @@
   "description": "Root package for Metadata Extractor application",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\" --kill-others --success first",
-    "start-backend": "npm start --prefix backend",
-    "start-frontend": "npm --prefix frontend run start"
+    "start": "npm run build && npm run start-server",
+    "build": "cd frontend && npm install && npm run build && cp -r frontend/build backend/public",
+    "start-server": "cd backend && npm install && node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "exiftool-vendored": "^30.3.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "bootstrap": "^5.3.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.7.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35"
   }
 }

@@ -13,8 +13,17 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/api', require('./routes/metadata'));
+// API Routes
+const metadataRoutes = require('./routes/metadata');
+app.use('/api/metadata', metadataRoutes);
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Catch-all to serve React index.html for client-side routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Multer error handling middleware
 app.use((err, req, res, next) => {
