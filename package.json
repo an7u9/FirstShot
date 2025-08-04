@@ -5,25 +5,25 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run start-server",
-    "build": "cd frontend && npm install && npm run build && cp -r frontend/build backend/public",
-    "start-server": "cd backend && npm install && node app.js"
+    "build": "cd frontend && react-scripts build && xcopy /E /I build ..\\backend\\public",
+    "start-server": "cd backend && node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "bootstrap": "^5.3.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "exiftool-vendored": "^30.3.0",
     "express": "^5.1.0",
     "multer": "^2.0.2",
-    "bootstrap": "^5.3.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "postcss": "^8.4.35",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-router-dom": "^7.7.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35"
+    "web-vitals": "^2.1.4"
   }
 }

@@ -1,0 +1,33 @@
+.metadataContainer {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-height: 18rem;
+  overflow-y: auto;
+}
+.metadataTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+}
+.metadataList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.metadataItem {
+  font-size: 0.98rem;
+  color: #444;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.metadataItem:last-child {
+  border-bottom: none;
+}
+.metadataKey {
+  font-weight: 600;
+  color: #6c757d;
+}

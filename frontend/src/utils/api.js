@@ -2,6 +2,7 @@ const API_BASE_URL = 'http://localhost:3001/api';
 
 export const extractMetadata = async (file) => {
   const formData = new FormData();
+    console.log(`Attempting to extract metadata from: ${API_BASE_URL}/extract-metadata`);
   formData.append('file', file);
 
   try {

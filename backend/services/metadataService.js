@@ -1,6 +1,6 @@
-const { exiftool } = require('exiftool-vendored');
+import { exiftool } from 'exiftool-vendored';
 
-const extractMetadata = async (filePath) => {
+export const extractMetadata = async (filePath) => {
   try {
     const tags = await exiftool.read(filePath);
     // Filter out unwanted tags and format the output
@@ -24,5 +24,3 @@ const extractMetadata = async (filePath) => {
     throw new Error('Failed to extract metadata');
   }
 };
-
-module.exports = { extractMetadata };

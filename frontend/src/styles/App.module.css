@@ -1,0 +1,32 @@
+.mainContainer {
+  background: #f4f3f2;
+  min-height: 100vh;
+}
+
+.centeredContent {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border-radius: 1rem;
+  padding: 2rem;
+  background: #fff;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+}
+
+.subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+}

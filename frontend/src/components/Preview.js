@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from '../styles/Preview.module.css';
 
 function Preview({ file }) {
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -9,7 +10,7 @@ function Preview({ file }) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviewUrl(reader.result);
-        setFileType(file.type.split('/')[0]); // 'image', 'video', 'audio', 'application', etc.
+        setFileType(file.type.split('/')[0]);
       };
       reader.readAsDataURL(file);
     } else {
@@ -19,7 +20,7 @@ function Preview({ file }) {
   }, [file]);
 
   if (!previewUrl) {
-    return null; // Or a placeholder if you prefer
+    return null;
   }
 
   const renderPreview = () => {
@@ -58,12 +59,12 @@ function Preview({ file }) {
   };
 
   return (
-    <div className="mt-4 p-4 bg-light rounded shadow-sm">
-      <h3 className="h6 fw-medium text-dark mb-2">File Preview:</h3>
+    <section className={styles.previewContainer} aria-label="File preview">
+      <h3 className={styles.previewTitle}>File Preview:</h3>
       <div className="d-flex justify-content-center align-items-center">
         {renderPreview()}
       </div>
-    </div>
+    </section>
   );
 }
 

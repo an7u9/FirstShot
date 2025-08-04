@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import upload from '../middleware/upload.js';
+import * as metadataService from '../services/metadataService.js';
+import { deleteFile } from '../utils/fileUtils.js';
+
 const router = express.Router();
-const upload = require('../middleware/upload');
-const metadataService = require('../services/metadataService');
-const { deleteFile } = require('../utils/fileUtils');
 
 router.post('/extract-metadata', upload.single('file'), async (req, res) => {
   if (!req.file) {
@@ -25,4 +26,4 @@ router.post('/extract-metadata', upload.single('file'), async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,25 +1,14 @@
 import React from 'react';
+import styles from '../styles/Message.module.css';
 
 function Message({ type, text }) {
-  let alertClass = '';
-  switch (type) {
-    case 'success':
-      alertClass = 'alert alert-success';
-      break;
-    case 'error':
-      alertClass = 'alert alert-danger';
-      break;
-    case 'info':
-      alertClass = 'alert alert-info';
-      break;
-    default:
-      alertClass = 'alert alert-secondary';
-      break;
-  }
+  let typeClass = styles.info;
+  if (type === 'success') typeClass = styles.success;
+  else if (type === 'error') typeClass = styles.error;
 
   return (
-    <div className={`${alertClass} mt-4`} role="alert">
-      <p className="mb-0">{text}</p>
+    <div className={`${styles.message} ${typeClass}`} role="alert" aria-live="polite">
+      <span>{text}</span>
     </div>
   );
 }

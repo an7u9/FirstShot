@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import styles from '../styles/FileUpload.module.css';
 
 function FileUpload({ onFileUpload }) {
   const fileInputRef = useRef(null);
@@ -24,13 +25,16 @@ function FileUpload({ onFileUpload }) {
 
   return (
     <div
-      className="mt-5 d-flex justify-content-center px-4 pt-4 pb-4 border border-2 border-secondary border-dashed rounded"
+      className={styles.dropZone}
+      tabIndex={0}
+      aria-label="File upload drop zone"
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      <div className="text-center">
+      <div className="text-center w-100">
         <svg
-          className="mx-auto mb-2" style={{height: '48px', width: '48px', color: '#6c757d'}}
+          className="mx-auto mb-2"
+          style={{height: '48px', width: '48px', color: '#6c757d'}}
           stroke="currentColor"
           fill="none"
           viewBox="0 0 48 48"
@@ -46,22 +50,21 @@ function FileUpload({ onFileUpload }) {
         <div className="d-flex text-secondary justify-content-center align-items-center">
           <label
             htmlFor="file-upload"
-            className="btn btn-link p-0 m-0 align-baseline text-primary fw-medium"
-            style={{cursor: 'pointer'}}
+            className={styles.uploadLabel}
           >
             <span>Upload a file</span>
             <input
               id="file-upload"
               name="file-upload"
               type="file"
-              className="d-none"
+              style={{display: 'none'}}
               onChange={handleFileChange}
               ref={fileInputRef}
             />
           </label>
           <span className="ps-1">or drag and drop</span>
         </div>
-        <p className="text-muted small mt-2">
+        <p className={styles.uploadInfo}>
           Any file type up to 100MB
         </p>
       </div>

@@ -1,0 +1,32 @@
+.detailsContainer {
+  background: #f4f3f2;
+  min-height: 100vh;
+}
+.centeredContent {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.detailsCard {
+  background: #e3f0fa;
+  min-height: 340px;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem;
+  width: 100%;
+}
+.detailsTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.revealBtn {
+  margin-top: 2rem;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1rem;
+}

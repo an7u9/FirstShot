@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import MetadataDisplay from './MetadataDisplay';
 import Preview from './Preview';
 import Navbar from './Navbar';
+import styles from '../styles/DetailsPage.module.css';
 
 function DetailsPage() {
   const location = useLocation();
@@ -11,37 +12,37 @@ function DetailsPage() {
 
   if (!metadata) {
     return (
-      <div style={{background: 'rgb(244,243,242)', minHeight: '100vh'}}>
+      <div className={styles.detailsContainer}>
         <Navbar />
-        <div className="container py-5 d-flex flex-column align-items-center justify-content-center" style={{minHeight: '80vh'}}>
+        <section className={styles.centeredContent}>
           <div className="alert alert-warning text-center">No metadata to display. Please go back and upload a file.</div>
-        </div>
+        </section>
       </div>
     );
   }
 
   return (
-    <div style={{background: 'rgb(244,243,242)', minHeight: '100vh'}}>
+    <div className={styles.detailsContainer}>
       <Navbar />
-      <div className="container py-5 d-flex flex-column align-items-center justify-content-center" style={{minHeight: '80vh'}}>
+      <section className={styles.centeredContent}>
         <div className="row w-100 justify-content-center align-items-stretch" style={{maxWidth: '900px'}}>
           <div className="col-md-6 d-flex align-items-center justify-content-center mb-4 mb-md-0">
             <Preview file={file} />
           </div>
           <div className="col-md-6 d-flex align-items-center">
-            <div className="w-100 p-4 rounded shadow-sm" style={{background: '#e3f0fa', minHeight: '340px'}}>
-              <h1 className="h5 fw-bold text-primary text-center mb-4">Metadata Details for {fileName}</h1>
+            <div className={styles.detailsCard}>
+              <h1 className={styles.detailsTitle}>Metadata Details for {fileName}</h1>
               <MetadataDisplay metadata={metadata} />
               <button
-                onClick={() => navigate('/')} 
-                className="mt-4 w-100 btn btn-primary"
+                onClick={() => navigate('/')}
+                className={`btn btn-primary ${styles.revealBtn}`}
               >
                 Reveal another Shot
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

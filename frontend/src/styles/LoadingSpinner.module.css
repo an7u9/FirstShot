@@ -1,0 +1,11 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.spinnerText {
+  margin-left: 0.75rem;
+  color: #6c757d;
+  font-size: 1rem;
+}
